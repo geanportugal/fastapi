@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  # ---------------------------------------------------------------------------
+  # Postgres
+  # ---------------------------------------------------------------------------
+  postgres_15:
+    container_name: postgres
+    image: postgres:latest
+    command: postgres -c 'max_connections=500'
+    environment:
+      POSTGRES_USER: fastapi
+      POSTGRES_PASSWORD: fastapi
+      POSTGRES_DB: fastapi
+
+    ports:
+      - 15432:5432
+      
